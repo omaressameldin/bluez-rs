@@ -74,6 +74,14 @@ impl EIR {
             manufacturer_specific_data: Vec::new(),
         }
     }
+
+    pub fn name(self) -> Option<EIRName> {
+        self.name
+    }
+
+    pub fn tx_power_level(self) -> Vec<i8> {
+        self.tx_power_level
+    }
 }
 
 #[derive(Error, Debug)]
