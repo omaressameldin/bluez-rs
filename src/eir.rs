@@ -75,12 +75,12 @@ impl EIR {
         }
     }
 
-    pub fn name(self) -> Option<EIRName> {
-        self.name
+    pub fn name(&self) -> &Option<EIRName> {
+        &self.name
     }
 
-    pub fn tx_power_level(self) -> Vec<i8> {
-        self.tx_power_level
+    pub fn tx_power_level(&self) -> &Vec<i8> {
+        &self.tx_power_level
     }
 }
 
