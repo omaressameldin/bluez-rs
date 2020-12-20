@@ -28,6 +28,7 @@ pub struct EIRName {
     complete: bool,
 }
 
+
 impl EIRName {
     fn short_name(name: String) -> Self {
         EIRName {
@@ -40,6 +41,10 @@ impl EIRName {
             name: name,
             complete: true,
         }
+    }
+
+    pub fn name(&self) -> &str {
+        &self.name
     }
 }
 
