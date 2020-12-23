@@ -1,4 +1,5 @@
 use std::fmt::{Display, Formatter};
+use std::hash::{Hash, Hasher};
 
 #[derive(Debug, Copy, Clone, Eq, PartialEq)]
 pub struct Address {
@@ -24,6 +25,12 @@ impl Address {
 impl From<[u8; 6]> for Address {
     fn from(bytes: [u8; 6]) -> Self {
         return Address { bytes };
+    }
+}
+
+impl Hash for Address {
+    fn hash<H: Hasher>(&self, state: &mut H) {
+        self.bytes.hash(state);
     }
 }
 
